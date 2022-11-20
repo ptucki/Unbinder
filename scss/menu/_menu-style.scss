@@ -1,0 +1,38 @@
+/* --- STYLE --------------------------------- */
+/* Menu  */
+.note-menu {
+
+  &__list {
+    /* background-color: white; */
+    margin-top: 10px;
+  }
+  
+  &__item {
+    display:flex;
+    padding: 0px 0 0px 10px;
+    line-height: 30px;
+  }
+  
+  &__link {
+    text-decoration: none;
+    color: rgb(200, 200, 200);
+  }
+  
+  &__item--active::before {
+    font-size: 0.9rem;
+    line-height: 25px;
+    color: rgb(92, 92, 207);
+    content: "\25B6\00a0\00a0";
+  }
+  
+  &__link:hover {
+    transform: translate(5px);
+    transition-duration: 0.15s;
+  } 
+
+}
+
+/* --- TYPOGRAPHY ---------------------------- */
+.note-menu {
+  font-size: 1.6rem;
+}

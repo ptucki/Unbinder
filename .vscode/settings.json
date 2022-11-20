@@ -1,0 +1,12 @@
+{
+  "editor.fontSize": 12,
+
+  "liveSassCompile.settings.formats":[
+    // This is Default.
+    {
+        "format": "compressed",
+        "extensionName": ".css",
+        "savePath": "~/../css"
+    },
+]
+}

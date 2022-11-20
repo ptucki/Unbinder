@@ -1,0 +1,63 @@
+body {
+  background-color: rgb(42,44,52);
+}
+
+/* --- Note info ------------------------ */
+.header {
+  padding: 5px 5px 5px 0px;
+  margin-left: 10px;
+  color: rgb(67,70,82);
+  border-bottom: 1px solid rgb(67,70,82);
+  /* background-color: red; */
+}
+
+.header > .header__note-info:not(:last-child):after {
+  margin: 0 5px 0 5px;
+  content: "|";
+}
+
+
+
+/* --- Menu ----------------------------- */
+.note-menu {
+  /* background-color: blue; */
+}
+
+.note-menu__list {
+  /* background-color: white; */
+  margin-top: 10px;
+}
+
+.note-menu__item {
+  display:flex;
+  padding: 0px 0 0px 10px;
+  line-height: 30px;
+}
+
+.note-menu__link {
+  text-decoration: none;
+  color: rgb(200, 200, 200);
+}
+
+.note-menu__item--active {
+  /* background-color: violet; */
+ 
+}
+
+.note-menu__link:hover {
+  transform: translate(5px);
+  transition-duration: 0.15s;
+} 
+/* --- Note ----------------------------- */
+
+.note {
+  /* background-color: yellow; */
+  /* background-color: rgb(230, 230, 230); */
+}
+
+.note__container {
+  /* height: 100%; */
+  
+  color: rgb(200, 200, 200);
+  margin: 10px;
+}
