@@ -1,0 +1,51 @@
+@use "../../../abstract/mixins" as mixin;
+
+/* --- Unchanging ----------------------------- */
+
+.article {
+  
+  &__info {
+    display: flex;
+    flex-direction: row;
+    height: initial;
+    font-size: var(--font-step--1);
+    color: var(--invisible-font-color);
+    background-color: initial; /*#272830; /* ten sam co main-nav */
+    box-shadow: 0px 1px rgb(48, 50, 58);
+    margin-bottom: 10px;
+    padding: 0 0; /* standard padding */
+    justify-content: center;
+
+    // dot between "Name" and "Date"
+    & > *:not(:last-child)::after {
+      content: '\002022';
+      padding: 0 0.5em;
+    }
+
+    // Article name settings
+    &-name {
+      margin-right: auto;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+
+}
+
+/* --- Phone ---------------------------------- */
+@include mixin.media-min("phone") {
+
+}
+
+/* --- Tablet --------------------------------- */
+@include mixin.media-min("tablet") {
+
+}
+
+/* --- Desktop -------------------------------- */
+@include mixin.media-min("desktop") {
+
+}

@@ -1,10 +1,17 @@
 {
-  "editor.fontSize": 12,
+  "editor.fontSize": 11,
+  "editor.rulers": [80, 50],
+
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#313131"
+  },
+
+  "workbench.tree.indent": 15,
 
   "liveSassCompile.settings.formats":[
     // This is Default.
     {
-        "format": "compressed",
+        "format": "expanded",
         "extensionName": ".css",
         "savePath": "~/../css"
     },

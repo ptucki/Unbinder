@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'icon-notepad';
+  src:  url('../fonts/icomoon/icomoon.eot?55dq6e');
+  src:  url('../fonts/icomoon/icomoon.eot?55dq6e#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon/icomoon.ttf?55dq6e') format('truetype'),
+    url('../fonts/icomoon/icomoon.woff?55dq6e') format('woff'),
+    url('../fonts/icomoon/icomoon.svg?55dq6e#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icon-notepad' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-user:before {
+  content: "\e902";
+}
+.icon-new-file:before {
+  content: "\e903";
+}
+.icon-login:before {
+  content: "\e904";
+}
+.icon-keyboard:before {
+  content: "\e905";
+}
+.icon-highlight:before {
+  content: "\e906";
+}
+.icon-dark-mode-3:before {
+  content: "\e907";
+}
+.icon-menu:before {
+  content: "\e901";
+}
+.icon-search:before {
+  content: "\e900";
+}

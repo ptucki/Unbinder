@@ -1,0 +1,483 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "icon-notepad";
+  src: url("../fonts/icomoon/icomoon.eot?55dq6e");
+  src: url("../fonts/icomoon/icomoon.eot?55dq6e#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?55dq6e") format("truetype"), url("../fonts/icomoon/icomoon.woff?55dq6e") format("woff"), url("../fonts/icomoon/icomoon.svg?55dq6e#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icon-notepad" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-user:before {
+  content: "\e902";
+}
+
+.icon-new-file:before {
+  content: "\e903";
+}
+
+.icon-login:before {
+  content: "\e904";
+}
+
+.icon-keyboard:before {
+  content: "\e905";
+}
+
+.icon-highlight:before {
+  content: "\e906";
+}
+
+.icon-dark-mode-3:before {
+  content: "\e907";
+}
+
+.icon-menu:before {
+  content: "\e901";
+}
+
+.icon-search:before {
+  content: "\e900";
+}
+
+/*
+  Mixin for responsive web design in phone first approach
+
+  Common breakpoints:
+    zero           0px,
+    phone          400px,
+    phone-wide     480px,
+    phablet        560px,
+    tablet-small   640px,
+    tablet         768px,
+    tablet-wide    1024px,
+    desktop        1248px,
+    desktop-wide   1440px
+
+  Example of usage:
+    @include media-min("phone") {
+      .sweet-object {
+        background-color: red;
+      }
+    }
+*/
+:root {
+  --media-phone: 0px;
+  --media-tablet: 480px;
+  --media-desktop: 1024px;
+}
+
+/* --- Variables ----------------------------- */
+:root {
+  --visible-font-color: rgb(200, 200, 200);
+  --invisible-font-color: rgb(67,70,82);
+  --standard-bg-color: rgb(42, 44, 52);
+  --font-step-2: 3.6rem;
+  --font-step-1: 2.8rem;
+  --font-step-0: 1.4rem;
+  --font-step--1: 1.2rem;
+  --media-phone: 0px;
+  --media-tablet: 480px;
+  --media-desktop: 1024px;
+}
+
+/* --- Global settings ----------------------- */
+html {
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: OpenSans-Regular, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: var(--standard-bg-color);
+  color: var(--invisible-font-color);
+  overflow-x: hidden;
+}
+
+/* --- Scrollbar ----------------------------- */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(42, 44, 52);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(67, 70, 82);
+  border-radius: 5px;
+  border: 2px solid rgb(42, 44, 52);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(87, 90, 102);
+}
+
+/* --- Fonts ---------------------------------- */
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url("../fonts/woff2/OpenSans/OpenSans-Regular.woff2") format("woff2");
+}
+:root {
+  --menu-width: 300px;
+  --menu-phone-width: 100%;
+  --toolbox-thickness: 45px;
+}
+
+/* --- Unchanging ----------------------------- */
+.container {
+  display: flex;
+  transition-property: padding-left;
+  transition-duration: 0.2s;
+}
+
+/* --- Phone ---------------------------------- */
+@media (min-width: 0px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+/* --- Tablet --------------------------------- */
+@media (min-width: 480px) {
+  .container {
+    flex-direction: row;
+  }
+}
+/* --- Desktop -------------------------------- */
+@media (min-width: 1024px) {
+  .container {
+    width: auto;
+    max-width: 100%;
+  }
+}
+/* --- Unchanging ----------------------------- */
+.main-nav {
+  position: fixed;
+  height: 100%;
+  display: grid;
+  box-sizing: border-box;
+  color: var(--invisible-font-color);
+  background-color: #272830;
+  font-family: OpenSans-Regular;
+  font-size: var(--font-step--1);
+}
+
+/* --- Phone ---------------------------------- */
+@media (min-width: 0px) {
+  .main-nav {
+    width: var(--menu-phone-width);
+    grid-template-areas: "toolbox" "list";
+    grid-template-columns: 100%;
+    grid-template-rows: var(--toolbox-thickness) auto;
+    left: calc(0px - var(--media-tablet));
+    transition-property: left;
+    transition-duration: 0s;
+  }
+}
+/* --- Tablet --------------------------------- */
+@media (min-width: 480px) {
+  .main-nav {
+    grid-template-areas: "list toolbox";
+    grid-template-rows: 100%;
+    grid-template-columns: auto var(--toolbox-thickness);
+    top: 0px;
+    max-width: var(--menu-width);
+    left: calc(var(--toolbox-thickness) - var(--menu-width));
+    height: 100%;
+    transition-property: left;
+    transition-duration: 0.2s;
+  }
+}
+/* --- Desktop -------------------------------- */
+@media (min-width: 1024px) {
+  .main-nav {
+    left: 0px;
+  }
+}
+/* --- Unchanging ----------------------------- */
+.main-nav__list {
+  grid-area: list;
+  width: auto;
+  height: auto;
+  margin: 15px;
+  /* Hidding scroll bar on overflow and keep scrollable */
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+.main-nav__list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.main-nav__item {
+  width: 100%;
+  height: 2em;
+  transition-duration: 0.2s;
+}
+.main-nav__item-link {
+  color: var(--invisible-font-color);
+  text-decoration: none;
+  margin: 0 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  transition-duration: 0.2s;
+}
+.main-nav__item-link--active {
+  color: var(--visible-font-color);
+}
+.main-nav__item-link:hover {
+  color: var(--visible-font-color);
+}
+
+/* --- Phone ---------------------------------- */
+/* --- Tablet --------------------------------- */
+/* --- Desktop -------------------------------- */
+/* --- Unchanging ----------------------------- */
+.toolbox {
+  grid-area: toolbox;
+  display: flex;
+  background-color: var(--standard-bg-color);
+  color: var(--invisible-font-color);
+  align-items: center;
+  gap: 2px;
+}
+.toolbox__button {
+  display: block;
+  background: none;
+  color: inherit;
+  min-width: var(--toolbox-thickness);
+  min-height: var(--toolbox-thickness);
+  border: none;
+  cursor: pointer;
+  transition-property: color;
+  transition-duration: 0.2s;
+  font-size: 2.2rem;
+}
+.toolbox__button:hover {
+  color: var(--visible-font-color);
+}
+.toolbox__button--active {
+  color: var(--visible-font-color);
+}
+.toolbox__separator {
+  padding: 0;
+  width: 25px;
+  height: 1px;
+  border: 0;
+  background-color: var(--invisible-font-color);
+}
+
+/* --- Phone ---------------------------------- */
+@media (min-width: 0px) {
+  .toolbox {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .toolbox__button--main-nav {
+    margin-left: auto;
+  }
+  .toolbox__separator {
+    display: none;
+  }
+}
+/* --- Tablet --------------------------------- */
+@media (min-width: 480px) {
+  .toolbox {
+    width: auto;
+    height: 100vh;
+    flex-direction: column;
+    position: initial;
+    top: initial;
+    left: initial;
+  }
+  .toolbox__button--main-nav {
+    margin: 10px 0 0 0;
+    order: -2;
+  }
+  .toolbox__separator {
+    display: block;
+  }
+}
+/* --- Desktop -------------------------------- */
+/* --- Unchanging ----------------------------- */
+.notepad {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  width: 100%;
+  overflow: none;
+  box-sizing: border-box;
+  padding: 15px;
+  font-family: OpenSans-Regular;
+  font-weight: normal;
+  font-size: var(--font-step-0);
+  line-height: 1.3em;
+  letter-spacing: 0.02em;
+}
+
+/* --- Phone ---------------------------------- */
+@media (min-width: 0px) {
+  .notepad {
+    margin-top: var(--toolbox-thickness);
+  }
+}
+/* --- Tablet --------------------------------- */
+@media (min-width: 480px) {
+  .notepad {
+    margin: 0 0 0 var(--toolbox-thickness);
+    transition-property: margin-left;
+    transition-duration: 0.2s;
+  }
+}
+/* --- Desktop -------------------------------- */
+@media (min-width: 1024px) {
+  .notepad {
+    margin: 0 0 0 var(--menu-width);
+    max-width: 100%;
+  }
+}
+/* --- Unchanging ----------------------------- */
+.article {
+  max-width: 750px; /* 90ch */
+  display: inline-block;
+  color: var(--visible-font-color);
+  word-wrap: anywhere;
+}
+.article__paragraph {
+  display: inline-block;
+  word-wrap: anywhere;
+}
+
+/* --- Phone ---------------------------------- */
+@media (min-width: 0px) {
+  .article {
+    margin: auto;
+  }
+}
+/* --- Tablet --------------------------------- */
+/* --- Desktop -------------------------------- */
+/* === Text Styling =========================== */
+.article__title {
+  line-height: 1.3em;
+  font-size: var(--font-step-2);
+  margin-bottom: 1.4rem;
+}
+.article__header {
+  line-height: 1em;
+  font-size: var(--font-step-1);
+  margin-bottom: 1.4rem;
+}
+.article__paragraph {
+  font-size: var(--font-step-0);
+  margin-bottom: 1.4rem;
+}
+
+/* --- Unchanging ----------------------------- */
+.article__info {
+  display: flex;
+  flex-direction: row;
+  height: initial;
+  font-size: var(--font-step--1);
+  color: var(--invisible-font-color);
+  background-color: initial; /*#272830; /* ten sam co main-nav */
+  box-shadow: 0px 1px rgb(48, 50, 58);
+  margin-bottom: 10px;
+  padding: 0 0; /* standard padding */
+  justify-content: center;
+}
+.article__info > *:not(:last-child)::after {
+  content: "•";
+  padding: 0 0.5em;
+}
+.article__info-name {
+  margin-right: auto;
+}
+.article__info-name::after {
+  display: none;
+}
+
+/* --- Phone ---------------------------------- */
+/* --- Tablet --------------------------------- */
+/* --- Desktop -------------------------------- */
+/* Global settings */
+/* Template settings */
+/* Components *//*# sourceMappingURL=main.css.map */

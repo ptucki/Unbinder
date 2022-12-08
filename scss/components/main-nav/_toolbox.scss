@@ -1,0 +1,112 @@
+@use "../../abstract/mixins" as mixin;
+@use "../../settings/variables" as tvar;
+
+/* --- Unchanging ----------------------------- */
+
+.toolbox {
+  //layout
+  grid-area: toolbox;
+  display: flex;
+
+  //style
+  background-color: var(--standard-bg-color);
+  color: var(--invisible-font-color);
+  align-items: center;
+  gap: 2px;
+
+  //INNER ELEMENTS
+  &__button {
+    //style
+    display: block;
+    background: none;
+    color: inherit;
+    min-width: var(--toolbox-thickness);
+    min-height: var(--toolbox-thickness);
+    border: none;
+    cursor: pointer;
+    transition-property: color;
+    transition-duration: 0.2s;
+
+    //typograpghy
+    font-size: 2.2rem;
+
+    &:hover {
+      color: var(--visible-font-color);
+    }
+
+    //Modifyers
+    &--active {
+      color: var(--visible-font-color);
+    }
+  }
+
+  &__separator {
+    padding: 0;
+    width: 25px;
+    height: 1px;
+    border: 0;
+    background-color: var(--invisible-font-color);
+  }
+}
+
+/* --- Phone ---------------------------------- */
+@include mixin.media-min("phone") {
+
+  .toolbox {
+    //layout
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    //INNER ELEMENTS
+    &__button {
+      &--main-nav {
+        margin-left: auto;
+      }
+    }
+
+    &__separator {
+      display: none;
+    }
+  }
+
+}
+
+/* --- Tablet --------------------------------- */
+@include mixin.media-min("tablet") {
+
+  .toolbox {
+    //layout
+    width: auto;
+    height: 100vh;
+    //position: sticky;
+    flex-direction: column;
+    position: initial;
+    top: initial;
+    left: initial;
+  
+
+    //INNER ELEMENTS
+    &__button {
+      &--main-nav {
+        margin: 10px 0 0 0;
+        order: -2; //placeing on top
+      }
+    }
+
+    &__separator {
+      display: block;
+    }
+  }
+
+}
+
+/* --- Desktop -------------------------------- */
+@include mixin.media-min("desktop") {
+
+}
+
+

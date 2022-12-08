@@ -1,0 +1,10 @@
+/* Global settings */
+@use "./core/reset";
+@use "./core/icons";
+
+/* Template settings */
+@use "./settings/variables";
+@use "./settings/template_settings";
+
+/* Components */
+@use "./components"

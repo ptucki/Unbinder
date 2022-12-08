@@ -1,0 +1,62 @@
+@use "../abstract/mixins" as mixin;
+@use "../settings/variables" as var;
+
+/* --- Variables ----------------------------- */
+:root {
+  --visible-font-color: rgb(200, 200, 200);
+  --invisible-font-color: rgb(67,70,82);
+  
+  --standard-bg-color: #{var.$standard-bg-color};
+
+  --font-step-2: 3.6rem;
+  --font-step-1: 2.8rem;
+  --font-step-0: 1.4rem;
+  --font-step--1: 1.2rem;
+
+  --media-phone:   #{map-get(mixin.$breakpoints, phone)};
+  --media-tablet:  #{map-get(mixin.$breakpoints, tablet)};
+  --media-desktop: #{map-get(mixin.$breakpoints, desktop)};
+}
+
+/* --- Global settings ----------------------- */
+html {
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: OpenSans-Regular, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: var(--standard-bg-color);
+  color: var(--invisible-font-color);
+  overflow-x: hidden;
+}
+
+/* --- Scrollbar ----------------------------- */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background:  rgb(42,44,52);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(67,70,82);
+  border-radius: 5px;
+  border: 2px solid rgb(42,44,52);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(87,90,102);
+}
+
+/* --- Fonts ---------------------------------- */
+
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url("../fonts/woff2/OpenSans/OpenSans-Regular.woff2") format("woff2");
+}

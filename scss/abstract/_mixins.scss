@@ -1,0 +1,39 @@
+/*
+  Mixin for responsive web design in phone first approach
+
+  Common breakpoints:
+    zero           0px,
+    phone          400px,
+    phone-wide     480px,
+    phablet        560px,
+    tablet-small   640px,
+    tablet         768px,
+    tablet-wide    1024px,
+    desktop        1248px,
+    desktop-wide   1440px
+
+  Example of usage:
+    @include media-min("phone") {
+      .sweet-object {
+        background-color: red;
+      }
+    }
+*/
+$breakpoints: (
+    phone:        0px,
+    tablet:     480px,
+    desktop:   1024px,
+);
+
+// For js purposes
+:root {
+  --media-phone:   #{map-get($breakpoints, phone)};
+  --media-tablet:  #{map-get($breakpoints, tablet)};
+  --media-desktop: #{map-get($breakpoints, desktop)};
+}
+
+@mixin media-min($device) {
+  @media(min-width: map-get($breakpoints, $device)) {
+    @content;
+  }
+}

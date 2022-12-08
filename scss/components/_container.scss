@@ -1,0 +1,47 @@
+@use "../abstract/mixins" as mixin;
+
+/* --- Unchanging ----------------------------- */
+
+.container {
+  //layout
+  display: flex;
+  
+  //style
+  transition-property: padding-left;
+  transition-duration: 0.2s;
+}
+
+/* --- Phone ---------------------------------- */
+@include mixin.media-min("phone") {
+
+  .container {
+    //layout
+    flex-direction: column;
+    width: 100%;
+  }
+  
+
+}
+
+/* --- Tablet --------------------------------- */
+@include mixin.media-min("tablet") {
+
+  .container {
+    //layout
+    flex-direction: row;
+  }
+
+}
+
+/* --- Desktop -------------------------------- */
+@include mixin.media-min("desktop") {
+
+  .container {
+    //layout
+    width: auto;
+    max-width: 100%;
+  }
+
+}
+
+

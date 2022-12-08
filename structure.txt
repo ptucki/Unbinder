@@ -1,0 +1,11 @@
+Legend:
+# - template/app
+> - component
+
+#index
+container(
+  >nav
+  >notepad
+    >note  //Generated
+)
+

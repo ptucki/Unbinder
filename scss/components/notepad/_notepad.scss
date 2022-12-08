@@ -1,0 +1,61 @@
+@use "../../abstract/mixins" as mixin;
+@use "../../settings/variables" as gvar;
+
+/* --- Unchanging ----------------------------- */
+
+.notepad {
+  //layout
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  width: 100%;
+  overflow: none;
+  box-sizing: border-box;
+  
+  //style
+  padding: gvar.$standard-padding;
+
+  //typography
+  font-family: OpenSans-Regular;
+  font-weight: normal;
+  font-size: var(--font-step-0);
+  line-height: 1.3em  ;
+  letter-spacing: 0.02em;
+}
+
+/* --- Phone ---------------------------------- */
+@include mixin.media-min("phone") {
+
+  .notepad {
+    //layout
+    margin-top: var(--toolbox-thickness);
+  }
+
+}
+
+/* --- Tablet --------------------------------- */
+@include mixin.media-min("tablet") {
+
+  .notepad {
+    //layout
+    margin: 0 0 0 var(--toolbox-thickness);
+
+    //style
+    transition-property: margin-left;
+    transition-duration: 0.2s;
+  }
+
+}
+
+/* --- Desktop -------------------------------- */
+@include mixin.media-min("desktop") {
+
+  .notepad {
+    //layout
+    margin: 0 0 0 var(--menu-width);
+    max-width: 100%;
+  }
+
+}
+
+

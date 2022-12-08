@@ -1,0 +1,70 @@
+@use "../../abstract/mixins" as mixin;
+@use "../../settings/variables" as tvar;
+
+
+
+/* --- Unchanging ----------------------------- */
+
+.main-nav {
+  //layout
+  position: fixed;
+  height: 100%;
+  display: grid;
+
+  //style
+  box-sizing: border-box;
+  color: var(--invisible-font-color);
+  //transition-property: left;
+  //transition-duration: 0.2s;
+  background-color: darken(tvar.$standard-bg-color, 1.5%);  
+
+  //typography
+  font-family: OpenSans-Regular;
+  font-size: var(--font-step--1);
+}
+
+/* --- Phone ---------------------------------- */
+@include mixin.media-min("phone") {
+  
+  .main-nav {
+    //layout
+    width: var(--menu-phone-width); //max-width?
+    grid-template-areas: "toolbox" "list";
+    grid-template-columns: 100%;
+    grid-template-rows: var(--toolbox-thickness) auto;
+    left: calc(0px - var(--media-tablet)); // 480px max menu width for a phone
+    transition-property: left;
+    transition-duration: 0s;
+  }
+
+}
+
+/* --- Tablet --------------------------------- */
+@include mixin.media-min("tablet") {
+
+  .main-nav {
+    //layout
+    grid-template-areas: "list toolbox";
+    grid-template-rows: 100%;
+    grid-template-columns: auto var(--toolbox-thickness);
+    top: 0px;
+    max-width: var(--menu-width);
+    left: calc(var(--toolbox-thickness) - var(--menu-width));
+    height: 100%;
+    transition-property: left;
+    transition-duration: 0.2s;
+  }
+
+}
+
+/* --- Desktop -------------------------------- */
+@include mixin.media-min("desktop") {
+
+  .main-nav {
+    //layout
+    left: 0px;
+  }
+
+}
+
+

@@ -1,0 +1,15 @@
+Opens command #
+
+&cb[]();
+
+&  - opens intereter
+cb - sets the function
+() - selects text
+[] - arguments, parameters
+;  - ends command
+
+
+
+&h(Witaj w swiecie!);
+
+&p(To jest po prostu kawalek tekstu);

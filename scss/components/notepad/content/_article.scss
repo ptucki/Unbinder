@@ -1,0 +1,65 @@
+@use "../../../abstract/mixins" as mixin;
+
+/* --- Unchanging ----------------------------- */
+
+.article {
+  //layout
+  max-width: 750px; /* 90ch */
+  display: inline-block;
+
+  //style
+  color: var(--visible-font-color);
+  word-wrap: anywhere;
+
+  &__paragraph {
+    display: inline-block;
+    word-wrap: anywhere;
+  }
+}
+
+/* --- Phone ---------------------------------- */
+@include mixin.media-min("phone") {
+
+  .article {
+    //layout
+    margin: auto;
+  }
+
+}
+
+/* --- Tablet --------------------------------- */
+@include mixin.media-min("tablet") {
+
+}
+
+/* --- Desktop -------------------------------- */
+@include mixin.media-min("desktop") {
+
+}
+
+
+/* === Text Styling =========================== */
+
+$standard-text-bottomspace: 1.4rem;
+
+.article {
+  &__title {
+    line-height: 1.3em;
+    //background-color: red;
+    font-size: var(--font-step-2);
+    margin-bottom: $standard-text-bottomspace;
+  }
+  &__header {
+    line-height: 1em;
+    //background-color: yellow;
+    font-size: var(--font-step-1);
+    margin-bottom: $standard-text-bottomspace;
+  }
+
+  &__paragraph {
+    //background-color: slateblue;
+    font-size: var(--font-step-0);
+    margin-bottom: $standard-text-bottomspace;
+    
+  }
+}
