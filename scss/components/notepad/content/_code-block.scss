@@ -1,0 +1,100 @@
+@use "../../../abstract/mixins" as mixin;
+@use "../../../settings/variables" as tvar;
+
+/* --- Unchanging ----------------------------- */
+
+.article{
+
+  &__code-block {
+    //layout
+    box-sizing: content-box;
+    display: inline-grid;
+    grid-template-areas: "line-numbers code";
+    grid-template-columns: min-content auto;
+    width: 100%;
+    margin-bottom: 15px;
+
+    //style
+    line-height: 1.2;
+
+    //typography
+    font-family: "PTMono-Regular", monospace, monospace, Consolas;
+    font-size: var(--font-step-0);
+  }
+
+}
+
+.code-block {
+
+  //layout
+  text-overflow: clip;
+  overflow-x: auto;       /* Since CSS 2.1 */
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+
+  //style
+  background: linear-gradient(180deg, darken(tvar.$standard-bg-color, 5%), tvar.$standard-bg-color);
+
+  //typography
+  
+  grid-area: code;
+  width: 100%;
+  height: 100%;
+  padding: 10px 15px 10px 5px;
+  border-radius: 0 10px 10px 0;
+
+  &__line-numbers {
+    //layout
+    display: block;
+    grid-area: line-numbers;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box; 
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    width: min-content;
+    height: 100%;
+
+    //style
+    color: lighten(tvar.$standard-bg-color, 10%);
+    background-color:  darken(tvar.$standard-bg-color, 3%);
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px 0 0 10px;
+
+    //typography
+    text-align: right;
+    
+  }
+}
+
+.CPP {
+  &_PREPROCESSOR { color: #23a7c5; }
+}
+
+/* --- Scrollbar ----------------------------- */
+.code-block {
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: rgb(42, 44, 52);
+  }
+  
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgb(67, 70, 82);
+    border-radius: 5px;
+    border: 2px solid rgb(42, 44, 52);
+  }
+  
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgb(87, 90, 102);
+  }
+  
+}
