@@ -21,6 +21,32 @@
   //typography
   font-family: OpenSans-Regular;
   font-size: var(--font-step--1);
+
+  &__component-container {
+    padding: 15px;
+    grid-area: list;
+    display: flex;
+    width: auto;
+    
+
+
+    /* Hidding scroll bar on overflow and keep scrollable */
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    & > * {
+      width: 100% !important;          //to enusure that whole component will be 
+      height: min-content !important;  //within its container
+    }
+  }
+
 }
 
 /* --- Phone ---------------------------------- */
@@ -30,7 +56,7 @@
     //layout
     width: var(--menu-phone-width); //max-width?
     grid-template-areas: "toolbox" "list";
-    grid-template-columns: 100%;
+    grid-template-columns: auto;
     grid-template-rows: var(--toolbox-thickness) auto;
     left: calc(0px - var(--media-tablet)); // 480px max menu width for a phone
     transition-property: left;
@@ -45,7 +71,7 @@
   .main-nav {
     //layout
     grid-template-areas: "list toolbox";
-    grid-template-rows: 100%;
+    grid-template-rows: auto;
     grid-template-columns: auto var(--toolbox-thickness);
     top: 0px;
     max-width: var(--menu-width);

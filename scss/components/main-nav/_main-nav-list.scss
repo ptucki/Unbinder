@@ -5,27 +5,12 @@
 
 .main-nav {
   &__list {
-    //layout
-    grid-area: list;
-    width: auto;
-    height: auto;
-
-    //style
-    margin: gvar.$standard-padding;
-
-    /* Hidding scroll bar on overflow and keep scrollable */
-    overflow-y: scroll;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    &::-webkit-scrollbar {
-      width: 0;
-      height: 0;
-    }
+    height: 10px;
   }
 
   &__item {
     //style
-    width: 100%; 
+    width: auto; 
     height: 2em;
     transition-duration: 0.2s;
 
@@ -35,7 +20,7 @@
       text-decoration: none;
       margin:0 0;
       display: block;
-      width: 100%;
+      width: auto;
       height: 100%;
       text-overflow: ellipsis;
       overflow: hidden; 

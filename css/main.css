@@ -236,13 +236,35 @@ body {
   font-family: OpenSans-Regular;
   font-size: var(--font-step--1);
 }
+.main-nav__component-container {
+  padding: 15px;
+  grid-area: list;
+  display: flex;
+  width: auto;
+  /* Hidding scroll bar on overflow and keep scrollable */
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.main-nav__component-container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.main-nav__component-container > * {
+  width: 100% !important;
+  height: -webkit-min-content !important;
+  height: -moz-min-content !important;
+  height: min-content !important;
+}
 
 /* --- Phone ---------------------------------- */
 @media (min-width: 0px) {
   .main-nav {
     width: var(--menu-phone-width);
     grid-template-areas: "toolbox" "list";
-    grid-template-columns: 100%;
+    grid-template-columns: auto;
     grid-template-rows: var(--toolbox-thickness) auto;
     left: calc(0px - var(--media-tablet));
     transition-property: left;
@@ -253,7 +275,7 @@ body {
 @media (min-width: 480px) {
   .main-nav {
     grid-template-areas: "list toolbox";
-    grid-template-rows: 100%;
+    grid-template-rows: auto;
     grid-template-columns: auto var(--toolbox-thickness);
     top: 0px;
     max-width: var(--menu-width);
@@ -271,21 +293,10 @@ body {
 }
 /* --- Unchanging ----------------------------- */
 .main-nav__list {
-  grid-area: list;
-  width: auto;
-  height: auto;
-  margin: 15px;
-  /* Hidding scroll bar on overflow and keep scrollable */
-  overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-}
-.main-nav__list::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+  height: 10px;
 }
 .main-nav__item {
-  width: 100%;
+  width: auto;
   height: 2em;
   transition-duration: 0.2s;
 }
@@ -294,7 +305,7 @@ body {
   text-decoration: none;
   margin: 0 0;
   display: block;
-  width: 100%;
+  width: auto;
   height: 100%;
   text-overflow: ellipsis;
   overflow: hidden;

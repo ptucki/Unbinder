@@ -1,0 +1,170 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "icon-notepad";
+  src: url("../../fonts/icomoon/icomoon.eot?55dq6e");
+  src: url("../../fonts/icomoon/icomoon.eot?55dq6e#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?55dq6e") format("truetype"), url("../../fonts/icomoon/icomoon.woff?55dq6e") format("woff"), url("../../fonts/icomoon/icomoon.svg?55dq6e#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icon-notepad" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before {
+  content: "\e900";
+}
+
+.icon-menu:before {
+  content: "\e901";
+}
+
+/*
+  Mixin for responsive web design in phone first approach
+
+  Common breakpoints:
+    zero           0px,
+    phone          400px,
+    phone-wide     480px,
+    phablet        560px,
+    tablet-small   640px,
+    tablet         768px,
+    tablet-wide    1024px,
+    desktop        1248px,
+    desktop-wide   1440px
+
+  Example of usage:
+    @include media-min("phone") {
+      .sweet-object {
+        background-color: red;
+      }
+    }
+*/
+:root {
+  --media-phone: 0px;
+  --media-tablet: 480px;
+  --media-desktop: 1024px;
+}
+
+/* --- Variables ----------------------------- */
+:root {
+  --visible-font-color: rgb(200, 200, 200);
+  --invisible-font-color: rgb(67,70,82);
+  --standard-bg-color: rgb(42, 44, 52);
+  --font-step-2: 3.6rem;
+  --font-step-1: 2.8rem;
+  --font-step-0: 1.4rem;
+  --font-step--1: 1.2rem;
+  --media-phone: 0px;
+  --media-tablet: 480px;
+  --media-desktop: 1024px;
+}
+
+/* --- Global settings ----------------------- */
+html {
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: OpenSans-Regular, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: var(--standard-bg-color);
+  color: var(--invisible-font-color);
+  overflow-x: hidden;
+}
+
+/* --- Scrollbar ----------------------------- */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(42, 44, 52);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(67, 70, 82);
+  border-radius: 5px;
+  border: 2px solid rgb(42, 44, 52);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(87, 90, 102);
+}
+
+/* --- Fonts ---------------------------------- */
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url("../../fonts/woff2/OpenSans/OpenSans-Regular.woff2") format("woff2");
+}
+:root {
+  --menu-width: 300px;
+  --menu-phone-width: 100%;
+  --toolbox-thickness: 45px;
+}
